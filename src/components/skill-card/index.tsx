@@ -1,11 +1,16 @@
 import { skeleton } from '../../utils';
 
+interface SkillCategory {
+  category: string;
+  items: string[];
+}
+
 const SkillCard = ({
   loading,
   skills,
 }: {
   loading: boolean;
-  skills: string[];
+  skills: SkillCategory[];
 }) => {
   const renderSkeleton = () => {
     const array = [];
@@ -13,10 +18,9 @@ const SkillCard = ({
       array.push(
         <div key={index}>
           {skeleton({ widthCls: 'w-16', heightCls: 'h-4', className: 'm-1' })}
-        </div>,
+        </div>
       );
     }
-
     return array;
   };
 
@@ -33,15 +37,29 @@ const SkillCard = ({
           </h5>
         </div>
         <div className="p-3 flow-root">
-          <div className="-m-1 flex flex-wrap justify-center gap-2">
-            {loading
-              ? renderSkeleton()
-              : skills.map((skill, index) => (
-                  <div key={index} className="badge badge-primary badge-sm">
-                    {skill}
-                  </div>
-                ))}
-          </div>
+          {loading ? (
+            <div className="-m-1 flex flex-wrap justify-start gap-2">
+              {renderSkeleton()}
+            </div>
+          ) : (
+            skills.map((skillCategory, idx) => (
+              <div key={idx} className="mb-4">
+                <h6 className="font-semibold text-sm mb-2 text-primary">
+                  {skillCategory.category}
+                </h6>
+                <div className="-m-1 flex flex-wrap justify-start gap-2">
+                  {skillCategory.items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="badge badge-primary badge-sm whitespace-nowrap"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
