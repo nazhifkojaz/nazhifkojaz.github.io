@@ -10,16 +10,10 @@ import {
 import {
   FaDev,
   FaFacebook,
-  FaFacebookSquare,
   FaLinkedin,
   FaStackOverflow,
-  FaDiscord,
   FaGithub,
-  FaGithubSquare,
   FaInstagram,
-  FaInstagramSquare,
-  FaTwitter,
-  FaTwitterSquare,
   FaMedium,
 } from 'react-icons/fa';
 import { 
