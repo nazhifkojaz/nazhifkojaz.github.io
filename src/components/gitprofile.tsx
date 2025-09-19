@@ -17,7 +17,6 @@ import ThemeChanger from './theme-changer';
 import { BG_COLOR } from '../constants';
 import AvatarCard from './avatar-card';
 import { Profile } from '../interfaces/profile';
-import DetailsCard from './details-card';
 import SkillCard from './skill-card';
 import LanguageCard from './language-card';
 import ExperienceCard from './experience-card';
