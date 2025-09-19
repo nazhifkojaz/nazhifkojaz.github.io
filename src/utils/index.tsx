@@ -8,6 +8,8 @@ import {
   SanitizedConfig,
   SanitizedHotjar,
   SanitizedThemeConfig,
+  SanitizedSkillCategory,
+  SanitizedLanguage,
 } from '../interfaces/sanitized-config';
 
 export const isDarkishTheme = (appliedTheme: string): boolean => {
@@ -86,8 +88,8 @@ export const getSanitizedConfig = (
       resume: {
         fileUrl: config?.resume?.fileUrl || '',
       },
-      skills: config?.skills || [],
-      languages: config?.languages || [],
+      skills: (Array.isArray((config as any).skills) ? (config as any).skills : []) as SanitizedSkillCategory[],
+      languages: (Array.isArray((config as any).languages) ? (config as any).languages : []) as SanitizedLanguage[],
       experiences:
         config?.experiences?.filter(
           (experience) =>
