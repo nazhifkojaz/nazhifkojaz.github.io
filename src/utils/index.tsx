@@ -87,6 +87,7 @@ export const getSanitizedConfig = (
         fileUrl: config?.resume?.fileUrl || '',
       },
       skills: config?.skills || [],
+      languages: config?.languages || [],
       experiences:
         config?.experiences?.filter(
           (experience) =>
@@ -95,11 +96,23 @@ export const getSanitizedConfig = (
             experience.from ||
             experience.to,
         ) || [],
-      certifications:
-        config?.certifications?.filter(
-          (certification) =>
-            certification.year || certification.name || certification.body,
-        ) || [],
+      certifications: (config.certifications ?? []).map((c: any) => ({
+        name: String(c.name ?? ''),
+        // keep old body as fallback text (or omit if you don’t want any)
+        body: typeof c.body === 'string' ? c.body : '',
+
+        // show as “Issued …” in the card
+        year: (c.year ?? c.issued ?? c.date ?? '') as string,
+
+        // credential URL
+        link: (c.link ?? c.credentialUrl ?? '') as string,
+
+        // NEW fields (all optional)
+        provider: (c.provider ?? c.issuer ?? c.body ?? '') as string,
+        credentialId: c.credentialId ?? undefined,
+        logo: c.logo ?? undefined,
+        skills: Array.isArray(c.skills) ? c.skills : [],
+      })),
       educations:
         config?.educations?.filter(
           (item) => item.institution || item.degree || item.from || item.to,

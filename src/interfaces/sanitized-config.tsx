@@ -78,9 +78,9 @@ export interface SanitizedExperience {
 }
 
 export interface SanitizedCertification {
-  body?: string;
   name?: string;
   year?: string;
+  body?: string;
   link?: string;
 }
 
@@ -124,13 +124,24 @@ export interface SanitizedThemeConfig {
   themes: Array<string>;
 }
 
+export interface SanitizedSkillCategory {
+  category: string;
+  items: string[];
+}
+
+export interface SanitizedLanguage {
+  name: string;
+  level: string;
+}
+
 export interface SanitizedConfig {
   github: SanitizedGithub;
   projects: SanitizedProjects;
   seo: SanitizedSEO;
   social: SanitizedSocial;
   resume: SanitizedResume;
-  skills: Array<string>;
+  skills: SanitizedSkillCategory[];
+  languages?: SanitizedLanguage[];
   experiences: Array<SanitizedExperience>;
   educations: Array<SanitizedEducation>;
   certifications: Array<SanitizedCertification>;
