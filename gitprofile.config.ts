@@ -81,7 +81,7 @@ const CONFIG = {
   skills: [
     {
       category: 'Programming Languages',
-      items: ['Python', 'C#', 'PHP', 'C++'],
+      items: ['Python', 'C#', 'C++', 'SQL'],
     },
     {
       category: 'Databases',
@@ -90,30 +90,37 @@ const CONFIG = {
     {
       category: 'Data Science & Machine Learning',
       items: [
-        'Reinforcement Learning',
-        // Maybe put these into their own group later
-        // 'Analytics – Pandas, Scikit-learn',
-        // 'Deep Learning – PyTorch, TensorFlow, Keras',
-        // 'Visualization – Seaborn, Matplotlib',
-        'Forecasting',
-        'Recommendation Systems',
+        'Analytics (Pandas, Numpy, Scikit-learn)',
+        'Deep Learning (PyTorch, TensorFlow, Keras)',
+        'Visualization (Matplotlib, Seaborn)',
+      ],
+    },
+    {
+      category: 'ML Topics',
+      items: [
+        'Recomender Systems', 'Reinforcement Learning',
         'Natural Language Processing (NLP)',
-      ],
+      ]
     },
     {
-      category: 'Game Development',
-      items: [
-        'Unity3D', 'Cocos',
-        'Procedural Content Generation (AI-driven)',
-        'Game Analytics',
+    category: 'Game Development',
+    items: [
+        'Unity', 'Cocos',
       ],
     },
+    // {
+    //   category: 'Writing / Reporting',
+    //   items: [
+    //     'Jupyter Notebook', 'LaTeX (Overleaf)',
+    //   ]
+    // },
     {
-      category: 'Tools',
+      category: 'Other Tools',
       items: [
-        'Docker', 'Git', 'Jupyter Notebook',
-        'Power BI', 'Tableau', 'Orange Data Mining',
-        'LaTeX (Overleaf)',
+        'Docker', 'Git',
+        'Jupyter Notebook', 
+        // 'Orange Data Mining',
+        'LaTeX (Overleaf)', 'Poetry', 'Pytest'
       ],
     },
   ],
