@@ -99,7 +99,7 @@ const CONFIG = {
     {
       category: 'ML Topics',
       items: [
-        'Recomender Systems', 'Reinforcement Learning',
+        'Recommender Systems', 'Reinforcement Learning',
         'Natural Language Processing (NLP)',
       ]
     },
