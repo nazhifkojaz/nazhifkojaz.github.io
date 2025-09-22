@@ -15,6 +15,7 @@ import {
   FaGithub,
   FaInstagram,
   FaMedium,
+  FaFileDownload,
 } from 'react-icons/fa';
 import { 
   SiResearchgate,
@@ -123,22 +124,6 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
               : profile.bio}
           </div>
         </div>
-        {resumeFileUrl &&
-          (loading ? (
-            <div className="mt-6">
-              {skeleton({ widthCls: 'w-40', heightCls: 'h-8' })}
-            </div>
-          ) : (
-            <a
-              href={resumeFileUrl}
-              target="_blank"
-              className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
-              download
-              rel="noreferrer"
-            >
-              Download Resume
-            </a>
-          ))}
           <div className="text-base-content text-opacity-60 flex flex-wrap justify-center">
           <Fragment>
             <ListItem
@@ -214,6 +199,13 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
                 icon={<RiMailFill />}
                 label="Email"
                 link={`mailto:${social.email}`}
+              />
+            )}
+            {resumeFileUrl && (
+              <ListItem 
+                icon={<FaFileDownload />}
+                label="Resume Download"
+                link={resumeFileUrl}
               />
             )}
           </Fragment>
