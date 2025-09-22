@@ -16,6 +16,7 @@ import {
   FaInstagram,
   FaMedium,
   FaFileDownload,
+  FaKaggle,
 } from 'react-icons/fa';
 import { 
   SiResearchgate,
@@ -136,6 +137,13 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
                 icon={<SiResearchgate />}
                 label="ResearchGate"
                 link={`https://www.researchgate.net/profile/${social.researchGate}`}
+              />
+            )}
+            {social?.kaggle && (
+              <ListItem
+                icon={< FaKaggle/>}
+                label="kaggle"
+                link={`https://www.kaggle.com/${social.kaggle}`}
               />
             )}
             {social?.linkedin && (

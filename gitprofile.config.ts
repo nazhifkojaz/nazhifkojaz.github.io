@@ -58,7 +58,7 @@ const CONFIG = {
     mastodon: '',
     researchGate: 'Muhammad-Nazhif-Rizani-Asrizal',
     facebook: '',
-    instagram: 'nazhifkojaz',
+    instagram: '',
     reddit: '',
     threads: '',
     youtube: '', // example: 'pewdiepie'
@@ -66,6 +66,7 @@ const CONFIG = {
     dribbble: '',
     behance: '',
     medium: '',
+    kaggle: 'nazhifkojaz',
     dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
     discord: '',

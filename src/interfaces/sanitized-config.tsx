@@ -56,6 +56,7 @@ export interface SanitizedSocial {
   dribbble?: string;
   behance?: string;
   medium?: string;
+  kaggle?: string;
   dev?: string;
   stackoverflow?: string;
   website?: string;

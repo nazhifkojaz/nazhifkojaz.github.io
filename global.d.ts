@@ -173,6 +173,11 @@ interface Social {
   medium?: string;
 
   /**
+   * kaggle
+   */
+  kaggle?: string;
+
+  /**
    * dev
    */
   dev?: string;
